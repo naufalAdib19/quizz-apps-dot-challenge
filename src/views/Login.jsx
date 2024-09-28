@@ -11,7 +11,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-blue-100">
+    <div className="bg-blue-50">
       <SignIn></SignIn>
     </div>
   );
