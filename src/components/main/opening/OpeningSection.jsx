@@ -6,13 +6,12 @@ import img from "../../../assets/quizz.jpg";
 const OpeningSection = () => {
   const { quiz, setQuiz } = useContext(QuizzContext);
   const [isLoad, setIsLoad] = useState(false);
+  const baseUrl = import.meta.env.VITE_API_URL;
 
   const onQuizzStartHandle = async () => {
     setIsLoad(true);
     try {
-      const response = await fetch(
-        "https://opentdb.com/api.php?amount=10&type=multiple"
-      );
+      const response = await fetch(baseUrl + "amount=10&type=multiple");
       let data = await response.json();
       localStorage.setItem("quiz", JSON.stringify(data));
       setQuiz(data);
